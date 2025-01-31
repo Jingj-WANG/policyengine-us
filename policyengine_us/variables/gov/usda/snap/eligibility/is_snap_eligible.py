@@ -6,7 +6,7 @@ class is_snap_eligible(Variable):
     entity = SPMUnit
     label = "SNAP eligible"
     documentation = "Whether this SPM unit is eligible for SNAP benefits"
-    definition_period = YEAR
+    definition_period = MONTH
     reference = (
         "https://www.law.cornell.edu/uscode/text/7/2017#a",
         "https://www.law.cornell.edu/uscode/text/7/2014#c",
@@ -21,4 +21,10 @@ class is_snap_eligible(Variable):
         categorical_eligibility = spm_unit(
             "meets_snap_categorical_eligibility", period
         )
-        return normal_eligibility | categorical_eligibility
+        person = spm_unit.members
+        eligible_person_present = spm_unit.any(
+            ~person("is_snap_ineligible_student", period)
+        )
+        return (
+            normal_eligibility | categorical_eligibility
+        ) & eligible_person_present
