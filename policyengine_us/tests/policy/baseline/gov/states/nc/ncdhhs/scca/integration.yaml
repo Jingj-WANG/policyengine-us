@@ -1,0 +1,192 @@
+- name: Family of two, no children, no disabilities, monthly income below FPL, saving $0/month.
+  period: 2024-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 1_700
+        members: [person1, person2]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca: 0
+
+- name: Family of two, no children, no disabilities, monthly income below FPL, saving $0/month.
+  period: 2023-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 1_700
+        members: [person1, person2]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca: 0
+
+- name: Family of three (1 child, 17), no disabilities, monthly income below FPL, saving $0/month.
+  period: 2024-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+      child1:
+        age: 17
+        is_disabled: false
+        is_tax_unit_dependent: true
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 2_150
+        members: [person1, person2, child1]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2, child1]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca: 0
+
+- name: Family of three (1 child, 17 with disabilities), monthly income below FPL.
+  period: 2023-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+      child1:
+        age: 17
+        is_disabled: true
+        is_tax_unit_dependent: true
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 2_150
+        members: [person1, person2, child1]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2, child1]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca_parent_fee: 215
+    nc_scca_market_rate: [0, 0, 323]
+    nc_scca: 108
+
+- name: Family of four (2 children, ages 0 & 1), no disabilities, monthly income below FPL.
+  period: 2024-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+      child1:
+        age: 0
+        is_disabled: false
+        is_tax_unit_dependent: true
+      child2:
+        age: 1
+        is_disabled: false
+        is_tax_unit_dependent: true
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 5_199
+        members: [person1, person2, child1, child2]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2, child1, child2]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca_parent_fee: 520
+    nc_scca: 1_392
+
+- name: Family of four (2 children, ages 0 & 3), no disabilities, monthly income below FPL.
+  period: 2024-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      person2:
+        age: 35
+        is_disabled: false
+      child1:
+        age: 0
+        is_disabled: false
+        is_tax_unit_dependent: true
+      child2:
+        age: 3
+        is_disabled: false
+        is_tax_unit_dependent: true
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 5_199
+        members: [person1, person2, child1, child2]
+        spm_unit_pre_subsidy_childcare_expenses: 120_000
+    households:
+      household:
+        members: [person1, person2, child1, child2]
+        county_str: ALAMANCE_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca: 1_280
+
+- name: No childcare expenses
+  period: 2025-01
+  input:
+    people:
+      person1:
+        age: 30
+        is_disabled: false
+      child1:
+        age: 3
+        is_disabled: false
+        is_tax_unit_dependent: true
+      child2:
+        age: 7
+        is_disabled: false
+        is_tax_unit_dependent: true
+    spm_units:
+      spm_unit:
+        nc_scca_countable_income: 2_000
+        members: [person1, child1, child2]
+        spm_unit_pre_subsidy_childcare_expenses: 0
+    households:
+      household:
+        members: [person1, child1, child2]
+        county_str: CABARRUS_COUNTY_NC
+        state_code: NC
+  output:
+    nc_scca: 0

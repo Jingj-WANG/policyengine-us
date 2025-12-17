@@ -1,0 +1,50 @@
+- name: One person eligible, everybody still eligible
+  period: 2022
+  input:
+    people:
+      person1:
+        la_general_relief_immigration_status_eligible_person: true
+      person2:
+        la_general_relief_immigration_status_eligible_person: false
+      person3:
+        la_general_relief_immigration_status_eligible_person: false
+    households:
+      household:
+        members: [person1, person2, person3]
+        in_la: true
+  output:
+    la_general_relief_immigration_status_eligible: true
+
+- name: Eligible
+  period: 2022
+  input:
+    people:
+      person1:
+        la_general_relief_immigration_status_eligible_person: true
+      person2:
+        la_general_relief_immigration_status_eligible_person: true
+      person3:
+        la_general_relief_immigration_status_eligible_person: true
+    households:
+      household:
+        members: [person1, person2, person3]
+        in_la: true
+  output:
+    la_general_relief_immigration_status_eligible: true
+
+- name: Everybody ineligible
+  period: 2022
+  input:
+    people:
+      person1:
+        la_general_relief_immigration_status_eligible_person: false
+      person2:
+        la_general_relief_immigration_status_eligible_person: false
+      person3:
+        la_general_relief_immigration_status_eligible_person: false
+    households:
+      household:
+        members: [person1, person2, person3]
+        in_la: true
+  output:
+    la_general_relief_immigration_status_eligible: false

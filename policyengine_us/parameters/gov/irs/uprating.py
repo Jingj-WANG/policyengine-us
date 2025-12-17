@@ -1,20 +1,12 @@
-from policyengine_us.model_api import *
-from policyengine_core.periods import instant
+"""IRS uprating parameter setup.
 
+This module imports the unified uprating extension functionality.
+The actual extension logic is in parameters/uprating_extensions.py.
+"""
 
-def get_irs_cpi(parameters: ParameterNode, year: int) -> float:
-    cpi = parameters.gov.bls.cpi.c_cpi_u
-    end = instant(f"{year}-08-01")
-    start = end.offset(-MONTHS_IN_YEAR, MONTH)
-    monthly_cpi_values = []
-    for month in range(MONTHS_IN_YEAR):
-        monthly_cpi_values += [cpi(start.offset(month, MONTH))]
-    return sum(monthly_cpi_values) / MONTHS_IN_YEAR
+from policyengine_us.parameters.uprating_extensions import (
+    set_all_uprating_parameters as set_irs_uprating_parameter,
+)
 
-
-def set_irs_uprating_parameter(parameters: ParameterNode) -> ParameterNode:
-    uprating_index: Parameter = parameters.gov.irs.uprating
-    for year in range(2010, 2030):
-        irs_cpi = get_irs_cpi(parameters, year - 1)
-        uprating_index.update(period=f"year:{year}-01-01:1", value=irs_cpi)
-    return parameters
+# For backward compatibility, we keep the same function name
+# but it now calls the unified function that handles all uprating parameters

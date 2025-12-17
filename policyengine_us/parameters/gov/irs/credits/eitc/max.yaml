@@ -4,49 +4,98 @@ brackets:
   - threshold:
       0000-01-01: 0
     amount:
-      2017-01-01: 510
-      2018-01-01: 519
-      2019-01-01: 529
-      2020-01-01: 538
-      2021-01-01: 1_502
-      2022-01-01: 560
-      2023-01-01: 600
+      values:
+        2017-01-01: 510
+        2018-01-01: 519
+        2019-01-01: 529
+        2020-01-01: 538
+        2021-01-01: 1_502
+        2022-01-01: 560
+        2023-01-01: 600
+        2024-01-01: 632
+        2025-01-01: 649
+        2026-01-01: 664
+      metadata:
+        uprating:
+          parameter: gov.irs.uprating
+          rounding:
+            type: nearest
+            interval: 1
   - threshold:
       0000-01-01: 1
     amount:
-      2017-01-01: 3_400
-      2018-01-01: 3_461
-      2019-01-01: 3_526
-      2020-01-01: 3_584
-      2021-01-01: 3_618
-      2022-01-01: 3_733
-      2023-01-01: 3_995
+      values:
+        2017-01-01: 3_400
+        2018-01-01: 3_461
+        2019-01-01: 3_526
+        2020-01-01: 3_584
+        2021-01-01: 3_618
+        2022-01-01: 3_733
+        2023-01-01: 3_995
+        2024-01-01: 4_213
+        2025-01-01: 4_328
+        2026-01-01: 4_427
+      metadata:
+        uprating:
+          parameter: gov.irs.uprating
+          rounding:
+            type: nearest
+            interval: 1
   - threshold:
       0000-01-01: 2
     amount:
-      2017-01-01: 5_616
-      2018-01-01: 5_716
-      2019-01-01: 5_828
-      2020-01-01: 5_920
-      2021-01-01: 5_980
-      2022-01-01: 6_164
-      2023-01-01: 6_604
+      values:
+        2017-01-01: 5_616
+        2018-01-01: 5_716
+        2019-01-01: 5_828
+        2020-01-01: 5_920
+        2021-01-01: 5_980
+        2022-01-01: 6_164
+        2023-01-01: 6_604
+        2024-01-01: 6_960
+        2025-01-01: 7_152
+        2026-01-01: 7_316
+      metadata:
+        uprating:
+          parameter: gov.irs.uprating
+          rounding:
+            type: nearest
+            interval: 1
   - threshold:
       0000-01-01: 3
     amount:
-      2017-01-01: 6_318
-      2018-01-01: 6_431
-      2019-01-01: 6_557
-      2020-01-01: 6_660
-      2021-01-01: 6_728
-      2022-01-01: 6_935
-      2023-01-01: 7_430
+      values:
+        2017-01-01: 6_318
+        2018-01-01: 6_431
+        2019-01-01: 6_557
+        2020-01-01: 6_660
+        2021-01-01: 6_728
+        2022-01-01: 6_935
+        2023-01-01: 7_430
+        2024-01-01: 7_830
+        2025-01-01: 8_046
+        2026-01-01: 8_231
+      metadata:
+        uprating:
+          parameter: gov.irs.uprating
+          rounding:
+            type: nearest
+            interval: 1
 metadata:
   type: single_amount
   threshold_unit: child
   amount_unit: currency-USD
   label: EITC maximum amount by number of children
   reference:
+    - title: 26 U.S.C. § 32(b) - Earned Income Credit
+      href: https://www.law.cornell.edu/uscode/text/26/32#b
+      # Defines EITC percentages and maximum amounts by number of children
+    - title: 2026 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-25-32.pdf#page=14
+    - title: 2025 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-24-40.pdf#page=9
+    - title: 2024 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-23-34.pdf#page=10
     - title: 2023 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-22-38.pdf#page=10
     - title: 2022 IRS data release
@@ -61,3 +110,9 @@ metadata:
       href: https://www.irs.gov/pub/irs-drop/rp-17-58.pdf#page=10
     - title: 2017 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-16-55.pdf#page=11
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Feb 2024
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2024-02/53724-2024-02-Tax-Parameters.xlsx
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Jan 2025
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2025-01/53724-2025-01-Tax-Parameters.xlsx

@@ -1,8 +1,22 @@
 description: Rate at which the Utah Social Security Benefits Credit is phased out.
 values:
-  2022-01-01: 0.025
+  2021-01-01: 0.025
 metadata:
   unit: /1
+  label: Utah Social Security benefit credit phase-out rate
+  period: year
   reference:
-    - title: Utah Code §59-10-1044
+    - title: Utah Code §59-10-1042 (4) # Effective 2021-05-05; Superseded 2022-05-04
       href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1042.html
+    - title: Utah Code §59-10-1042 (4) # Effective 2022-05-04; Superseded 2023-05-23
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1042.html
+    - title: Utah Code §59-10-1042 (4) # Effective 2023-05-23
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1042.html?v=C59-10-S1042_2023050320230503
+    - title: Utah Code §59-10-1042 (4) # Current tax code; last viewed on 2025-02-07
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1042.html
+    - title: Utah Form TC-40A (Current) Part 3 (AH)
+      href: https://tax.utah.gov/forms/current/tc-40inst.pdf#page=23
+    - title: Utah Social Security Benefits Credit
+      href: https://incometax.utah.gov/credits/ss-benefits
+    - title: 2025 Utah TC-40 Instructions, Social Security Benefits Credit Worksheet
+      href: https://tax.utah.gov/forms/drafts/tc-40inst.pdf#page=23

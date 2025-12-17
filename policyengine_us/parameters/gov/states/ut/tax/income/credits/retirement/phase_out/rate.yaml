@@ -1,8 +1,22 @@
 description: Rate at which the Utah retirement credit is phased out.
 values:
-  2022-01-01: 0.025
+  2021-01-01: 0.025
 metadata:
   unit: /1
+  period: year
+  label: Retirement credit phase-out rate
   reference:
-    - title: Utah Code §59-10-1019
+    - title: Utah Code §59-10-1019 (4) # Superseded 2021-05-05
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1019.html?v=C59-10-S1019_2022032320220323
+    - title: Utah Code §59-10-1019 (4) # Effective 2021-05-05; Superseded 2022-03-23
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1019.html?v=C59-10-S1019_2022032320220323
+    - title: Utah Code §59-10-1019 (4) # Effective 2022-03-23
+      href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1019.html?v=C59-10-S1019_2022032320220323
+    - title: Utah Code §59-10-1019 (4) # Current tax code; last viewed on 2025-02-07
       href: https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1019.html
+    - title: Utah Form TC-40 (Current) # last viewed on 2025-02-07
+      href: https://tax.utah.gov/forms/current/tc-40inst.pdf#page=21
+    - title: Utah Retirement Credit
+      href: https://incometax.utah.gov/credits/retirement-credit
+    - title: 2025 Utah TC-40 Instructions, Retirement Credit Worksheet
+      href: https://tax.utah.gov/forms/drafts/tc-40inst.pdf#page=21

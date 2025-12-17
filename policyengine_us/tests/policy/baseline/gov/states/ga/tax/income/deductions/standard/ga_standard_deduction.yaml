@@ -1,0 +1,59 @@
+- name: Joint filing - just base deduction amount
+  period: 2023
+  input:
+    filing_status: JOINT
+    state_code: GA
+  output:
+    ga_standard_deduction: 7_100
+
+- name: Joint filing - one blind spouse
+  period: 2023
+  input:
+    filing_status: JOINT
+    state_code: GA
+    ga_additional_standard_deduction: 1_300
+  output:
+    ga_standard_deduction: 8_400
+
+- name: Single filing - aged head
+  period: 2023
+  input:
+    filing_status: SINGLE
+    state_code: GA
+    ga_additional_standard_deduction: 1_300
+  output:
+    ga_standard_deduction: 6_700
+
+- name: Head of household  - one blind and aged head
+  period: 2023
+  input:
+    filing_status: HEAD_OF_HOUSEHOLD
+    ga_additional_standard_deduction: 2_600
+    state_code: GA
+  output:
+    ga_standard_deduction: 8_000
+
+- name: 2023 Joint filing - aged and blind head + aged and blind spouse
+  period: 2023
+  input:
+    filing_status: JOINT
+    state_code: GA
+    ga_additional_standard_deduction: 5_200
+  output:
+    ga_standard_deduction: 12_300
+
+- name: 2024 Joint filing - aged and blind head + aged and blind spouse
+  period: 2024
+  input:
+    filing_status: JOINT
+    state_code: GA
+  output:
+    ga_standard_deduction: 24_000
+
+- name: 2024 Head of household  - one blind and aged head
+  period: 2024
+  input:
+    filing_status: HEAD_OF_HOUSEHOLD
+    state_code: GA
+  output:
+    ga_standard_deduction: 12_000

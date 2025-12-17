@@ -5,38 +5,59 @@ SINGLE:
   2021-01-01: 1_700
   2022-01-01: 1_750
   2023-01-01: 1_850
+  2024-01-01: 1_950
+  2025-01-01: 2_000
+  2026-01-01: 2_050
 JOINT:
   2018-01-01: 1_300
   2019-01-01: 1_300
   2021-01-01: 1_350
   2022-01-01: 1_400
   2023-01-01: 1_500
+  2024-01-01: 1_550
+  2025-01-01: 1_600
+  2026-01-01: 1_650
 SEPARATE:
   2018-01-01: 1_300
   2019-01-01: 1_300
   2021-01-01: 1_350
   2022-01-01: 1_400
   2023-01-01: 1_500
+  2024-01-01: 1_550
+  2025-01-01: 1_600
+  2026-01-01: 1_650
 HEAD_OF_HOUSEHOLD:
   2018-01-01: 1_600
   2019-01-01: 1_650
   2021-01-01: 1_700
   2022-01-01: 1_750
   2023-01-01: 1_850
-WIDOW:
+  2024-01-01: 1_950
+  2025-01-01: 2_000
+  2026-01-01: 2_050
+SURVIVING_SPOUSE:
   2018-01-01: 1_300
   2019-01-01: 1_300
   2021-01-01: 1_350
   2022-01-01: 1_400
   2023-01-01: 1_500
+  2024-01-01: 1_550
+  2025-01-01: 1_600
+  2026-01-01: 1_650
 metadata:
   unit: currency-USD
-  name: aged_blind_std
   breakdown:
     - filing_status
   label: Additional standard deduction for the blind and aged
   period: year
+  propagate_metadata_to_children: true
   reference:
+    - title: 2026 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-25-32.pdf#page=18
+    - title: 2025 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-24-40.pdf#page=12
+    - title: 2024 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-23-34.pdf#page=14
     - title: 2023 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-22-38.pdf#page=14
     - title: 2022 IRS data release
@@ -47,3 +68,15 @@ metadata:
       href: https://www.irs.gov/pub/irs-drop/rp-19-44.pdf
     - title: 2019 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-18-57.pdf
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Feb 2024
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2024-02/53724-2024-02-Tax-Parameters.xlsx
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Jan 2025
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2025-01/53724-2025-01-Tax-Parameters.xlsx
+
+  uprating:
+    parameter: gov.irs.uprating
+    rounding:
+      type: downwards
+      interval: 50

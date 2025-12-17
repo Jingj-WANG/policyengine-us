@@ -5,12 +5,31 @@ values:
   2018-01-01: 1_400
   2022-01-01: 1_500
   2023-01-01: 1_600
-  2026-01-01: 1_000
+  2024-01-01: 1_700
+  2027-01-01: 1_800
+  2029-01-01: 1_900
+  2032-01-01: 2_000
+  2034-01-01: 2_100
 metadata:
   unit: currency-USD
   period: year
   label: Child tax credit refundable maximum amount
+  uprating:
+    parameter: gov.irs.uprating
+    rounding:
+      type: downwards
+      interval: 100
   reference:
+    - title: 26 U.S. Code § 24(h)(5)(A) - Child tax credit refundable portion
+      href: https://www.law.cornell.edu/uscode/text/26/24#h_5_A
+    - title: 26 U.S. Code § 24(i)(1) - Inflation adjustment for refundable amount
+      href: https://www.law.cornell.edu/uscode/text/26/24#i_1
+    - title: 2026 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-25-32.pdf#page=13
+    - title: 2025 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-24-40.pdf#page=8
+    - title: 2024 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-23-34.pdf#page=9
     - title: 2023 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-22-38.pdf#page=9
     - title: 2022 IRS data release
@@ -21,7 +40,6 @@ metadata:
       href: https://www.irs.gov/pub/irs-drop/rp-19-44.pdf#page=10
     - title: 2019 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-18-57.pdf#page=12
-    # NB: Not specified in prior IRS data releases.
-    # Indexed to inflation with respect to 2017, rounding down by $100.
-    - title: 26 U.S. Code § 24(h)(5)(A)
-      href: https://www.law.cornell.edu/uscode/text/26/24#h_5_A
+    # IRC §24(i)(1) adjusts the $1,400 statutory base using 2017 as reference year.
+    # Current implementation uses incremental uprating from latest value, which
+    # produces correct results but differs from statutory base-year calculation.

@@ -5,6 +5,11 @@
 build
 dist
 
+# Virtual environments
+
+venv/
+.venv/
+
 # Editors
 
 .project
@@ -24,13 +29,14 @@ dist
 
 # Data
 
-**/*.csv
 **/_build
 **/.ipynb_checkpoints
 .coverage
+.coverage.*
 **/*.xml
 taxcalc_output
 .vscode/settings.json
+settings.local.json
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/targets.log
@@ -45,6 +51,15 @@ docs/book/_build
 # Personal utility scripts
 .*.py
 
+# Claude settings
+.claude/settings.local.json
+
 # GitHub Codespaces.
 venv/**
 oryx-build-commands.txt
+
+**/*.csv.gz
+**/*.pkl
+
+# Claude Code settings
+.claude/settings.local.json

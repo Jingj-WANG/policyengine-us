@@ -15,10 +15,10 @@ class ia_exemption_credit(Variable):
 
     def formula(tax_unit, period, parameters):
         # count adult and dependent exemptions
-        adult_count = tax_unit("num", period)
+        adult_count = tax_unit("head_spouse_count", period)
         filing_status = tax_unit("filing_status", period)
         hoh_status = filing_status.possible_values.HEAD_OF_HOUSEHOLD
-        hoh_bonus = where(filing_status == hoh_status, 1, 0)
+        hoh_bonus = filing_status == hoh_status
         dependent_count = tax_unit("tax_unit_dependents", period)
         # count extra adult exemptions based on being elderly and/or blind
         p = parameters(period).gov.states.ia.tax.income

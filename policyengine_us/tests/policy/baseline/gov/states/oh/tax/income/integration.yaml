@@ -1,0 +1,265 @@
+- name: Tax unit with taxsimid 96310 in e21.its.csv and e21.ots.csv
+  absolute_error_margin: 0.01
+  period: 2021
+  input:
+    people:
+      person1:
+        age: 69
+        employment_income: 29_010
+        taxable_interest_income: 11_010
+        ssi: 0  # not in TAXSIM35
+        ma_state_supplement: 0  # not in TAXSIM35
+        wic: 0  # not in TAXSIM35
+      person2:
+        age: 11
+        ssi: 0  # not in TAXSIM35
+        ma_state_supplement: 0  # not in TAXSIM35
+        wic: 0  # not in TAXSIM35
+      person3:
+        age: 11
+        ssi: 0  # not in TAXSIM35
+        ma_state_supplement: 0  # not in TAXSIM35
+        wic: 0  # not in TAXSIM35
+      person4:
+        age: 11
+        ssi: 0  # not in TAXSIM35
+        ma_state_supplement: 0  # not in TAXSIM35
+        wic: 0  # not in TAXSIM35
+      person5:
+        age: 11
+        ssi: 0  # not in TAXSIM35
+        ma_state_supplement: 0  # not in TAXSIM35
+        wic: 0  # not in TAXSIM35
+    tax_units:
+      tax_unit:
+        members: [person1, person2, person3, person4, person5]
+        aca_ptc: 0  # not in TAXSIM35
+        local_income_tax: 0  # not in TAXSIM35
+        state_sales_tax: 0  # not in TAXSIM35
+    spm_units:
+      spm_unit:
+        members: [person1, person2, person3, person4, person5]
+        snap: 0  # not in TAXSIM35
+        tanf: 0  # not in TAXSIM35
+    households:
+      household:
+        members: [person1, person2, person3, person4, person5]
+        state_fips: 39  # OH
+  output:  # expected results from patched TAXSIM35 2024-01-31 version
+    oh_senior_citizen_credit: 50
+    oh_exemption_credit: 100
+    oh_income_tax: 314.32
+
+- name: Tax unit with taxsimid 94803 in j21.its.csv and j21.ots.csv
+  absolute_error_margin: 0.01
+  period: 2021
+  input:
+    people:
+      person1:
+        age: 48
+        employment_income: 152_010
+        qualified_dividend_income: 4_005
+        taxable_interest_income: 5_505
+        short_term_capital_gains: 3_505
+        long_term_capital_gains: 3_005
+        rental_income: 4_005
+        rent: 17_000
+        self_employment_income: 160_010
+        business_is_qualified: true
+        business_is_sstb: false
+        w2_wages_from_qualified_business: 100e6
+      person2:
+        age: 48
+        employment_income: 53_010
+        qualified_dividend_income: 4_005
+        taxable_interest_income: 5_505
+        short_term_capital_gains: 3_505
+        long_term_capital_gains: 3_005
+        rental_income: 4_005
+      person3:
+        age: 11
+      person4:
+        age: 11
+      person5:
+        age: 11
+    households:
+      household:
+        members: [person1, person2, person3, person4, person5]
+        state_fips: 39  # OH
+  output:  # expected results from patched TAXSIM35 2024-02-21 version
+    oh_income_tax: 13_756.36
+
+- name: Tax unit with taxsimid 97470 in j21.its.csv and j21.ots.csv
+  absolute_error_margin: 0.01
+  period: 2021
+  input:
+    people:
+      person1:
+        age: 60
+        employment_income: 40_010
+        qualified_dividend_income: 8_010
+        taxable_interest_income: 11_010
+        short_term_capital_gains: 3_010
+        long_term_capital_gains: 10_010
+        rental_income: 1_010
+        taxable_private_pension_income: 9_000
+        rent: 14_000
+        self_employment_income: 28_010
+        business_is_qualified: true
+        business_is_sstb: true
+        w2_wages_from_qualified_business: 100e6
+      person2:
+        age: 11
+      person3:
+        age: 16
+    tax_units:
+      tax_unit:
+        members: [person1, person2, person3]
+        aca_ptc: 0  # not in TAXSIM35
+    households:
+      household:
+        members: [person1, person2, person3]
+        state_fips: 39  # OH
+  output:  # expected results from patched TAXSIM35 2024-03-09 version
+    oh_income_tax: 2_818.55
+
+- name: 0-OH.yaml
+  absolute_error_margin: 2
+  period: 2024
+  input:
+    people:
+      person1:
+        age: 70
+        employment_income: 10000.0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        deductible_mortgage_interest: 13333.333
+        qualified_dividend_income: 9822.7325
+        is_tax_unit_head: true
+      person2:
+        age: 70
+        employment_income: 10000.0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        qualified_dividend_income: 9822.7325
+        is_tax_unit_spouse: true
+      person3:
+        age: 5
+        employment_income: 0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        is_tax_unit_dependent: true
+        is_tax_unit_head: false
+        is_tax_unit_spouse: false
+    tax_units:
+      tax_unit:
+        members: [person1, person2, person3]
+        premium_tax_credit: 0
+        local_income_tax: 0
+        state_sales_tax: 0
+        tax_unit_childcare_expenses: 6000.0
+    spm_units:
+      spm_unit:
+        members: [person1, person2, person3]
+        snap: 0
+        tanf: 0
+        free_school_meals: 0
+        reduced_price_school_meals: 0
+    households:
+      household:
+        members: [person1, person2, person3]
+        state_fips: 39
+  output:
+    oh_cdcc: 165
+    oh_income_tax: 273
+
+- name: 40115-OH.yaml
+  absolute_error_margin: 2
+  period: 2024
+  input:
+    people:
+      person1:
+        age: 40
+        employment_income: 129626.8
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        long_term_capital_gains: -39740.8515
+        short_term_capital_gains: -601164.25
+        taxable_interest_income: 309.727295
+        is_tax_unit_head: true
+      person2:
+        age: 40
+        employment_income: 0.0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        long_term_capital_gains: -39740.8515
+        short_term_capital_gains: -601164.25
+        taxable_interest_income: 309.727295
+        is_tax_unit_spouse: true
+      person3:
+        age: 10
+        employment_income: 0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        is_tax_unit_dependent: true
+        is_tax_unit_head: false
+        is_tax_unit_spouse: false
+      person4:
+        age: 10
+        employment_income: 0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        is_tax_unit_dependent: true
+        is_tax_unit_head: false
+        is_tax_unit_spouse: false
+      person5:
+        age: 10
+        employment_income: 0
+        ssi: 0
+        wic: 0
+        head_start: 0
+        early_head_start: 0
+        commodity_supplemental_food_program: 0
+        is_tax_unit_dependent: true
+        is_tax_unit_head: false
+        is_tax_unit_spouse: false
+    tax_units:
+      tax_unit:
+        members: [person1, person2, person3, person4, person5]
+        premium_tax_credit: 0
+        local_income_tax: 0
+        state_sales_tax: 0
+    spm_units:
+      spm_unit:
+        members: [person1, person2, person3, person4, person5]
+        snap: 0
+        tanf: 0
+        free_school_meals: 0
+        reduced_price_school_meals: 0
+    households:
+      household:
+        members: [person1, person2, person3, person4, person5]
+        state_fips: 39
+  output:
+    oh_income_tax: 3_015

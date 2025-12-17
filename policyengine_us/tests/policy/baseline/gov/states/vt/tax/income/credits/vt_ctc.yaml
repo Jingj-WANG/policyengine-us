@@ -1,0 +1,92 @@
+- name: Five qualifying children.
+  period: 2023
+  input:
+    people:
+      parent:
+        age: 30
+      child1:
+        age: 10 #disqualified
+      child2:
+        age: 5
+      child3:
+        age: 4
+      child4:
+        age: 3
+      child5:
+        age: 2
+      child6:
+        age: 0
+    households:
+      household:
+        members: [parent, child1, child2, child3, child4, child5, child6]
+        state_code: VT
+    tax_units:
+      tax_unit:
+        members: [parent, child1, child2, child3, child4, child5, child6]
+        adjusted_gross_income: 1_000
+  output:
+    vt_ctc: 5_000
+
+- name: Fully phases out at $175,000. 1000-20*(175000-125000)/1000 = 0
+  period: 2023
+  input:
+    state_code: VT
+    age: 5
+    adjusted_gross_income: 175_000
+  output:
+    vt_ctc: 0
+
+- name: Check we're not creating a negative value.
+  period: 2023
+  input:
+    state_code: VT
+    age: 5
+    adjusted_gross_income: 200_000
+  output:
+    vt_ctc: 0
+
+- name: Halfway phased out at $150,000. 1000-20*(150000-125000)/1000 = 500
+  period: 2023
+  input:
+    state_code: VT
+    age: 5
+    adjusted_gross_income: 150_000
+  output:
+    vt_ctc: 500
+
+# S.51 (2025) tests for expanded age eligibility
+- name: S.51 - CTC includes 6-year-olds starting 2025
+  period: 2025
+  input:
+    state_code: VT
+    age: 6
+    adjusted_gross_income: 50_000
+  output:
+    vt_ctc: 1_000
+
+- name: S.51 - CTC still applies to 5-year-olds in 2025
+  period: 2025
+  input:
+    state_code: VT
+    age: 5
+    adjusted_gross_income: 50_000
+  output:
+    vt_ctc: 1_000
+
+- name: S.51 - CTC does not apply to 7-year-olds in 2025
+  period: 2025
+  input:
+    state_code: VT
+    age: 7
+    adjusted_gross_income: 50_000
+  output:
+    vt_ctc: 0
+
+- name: S.51 - CTC did not include 6-year-olds before 2025
+  period: 2024
+  input:
+    state_code: VT
+    age: 6
+    adjusted_gross_income: 50_000
+  output:
+    vt_ctc: 0

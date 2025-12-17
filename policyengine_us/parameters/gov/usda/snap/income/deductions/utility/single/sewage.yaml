@@ -1,25 +1,39 @@
-description: Utility allowance for households whose utility expenses are only sewage-related (or, if the state does not have a defined limited utility allowance, households with sewage expenses but not heating/cooling expenses).
+description: Utility allowance for households whose utility expenses are only sewage-related
+  (or, if the state does not have a defined limited utility allowance, households
+  with sewage expenses but not heating/cooling expenses).
 metadata:
   unit: currency-USD
   period: month
   label: SNAP standard utility allowance for sewage expenses
   breakdown:
   - snap_utility_region
+  uprating: gov.usda.snap.uprating
+  propagate_metadata_to_children: true
+  reference:
+  - name: USDA utility allowances by state spreadsheet. Extracted by build_utility_allowances (FY2024)
+    href: https://docs.google.com/spreadsheets/d/10otJJisAYUDyZ0d7XpZPn8rEql-rteVE/edit?gid=1837348310#gid=1837348310
+  - name: USDA utility allowances by state spreadsheet. Extracted by build_utility_allowances (FY2025)
+    href: https://www.fns.usda.gov/sites/default/files/resource-files/2024-09-30-SUA-Table-FY25-508-Update.xlsx
 AK:
   2010-01-01: 0
   2021-10-01: 37
+  2023-10-01: 59
 AL:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 AR:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 AZ:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 CA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 CO:
   2010-01-01: 0
   2021-10-01: 59
@@ -27,146 +41,213 @@ CO:
     value: 64
     metadata:
       reference:
-        - title: Code of Colorado Regulations | Rule Manual Volume 4, SNAP | 4.407.31(C)(3) (page 110)
-          href: https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=10492&fileName=10%20CCR%202506-1
+      - title: Code of Colorado Regulations | Rule Manual Volume 4, SNAP | 4.407.31(C)(3)
+          (page 110)
+        href: https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=10492&fileName=10%20CCR%202506-1
+  2023-10-01: 67
+  2024-10-01: 69
 CT:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 DC:
   2010-01-01: 0
   2021-10-01: 73
+  2023-10-01: 84
+  2024-10-01: 88
 DE:
   2010-01-01: 0
   2021-10-01: 75
+  2023-10-01: 82 
+  2024-10-01: 99
 FL:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 GA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 GU:
   2010-01-01: 0
   2021-10-01: 28
+  2023-10-01: 28
 HI:
   2010-01-01: 0
   2021-10-01: 94
+  2023-10-01: 95  
+  2024-10-01: 97
 IA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 ID:
   2010-01-01: 0
   2021-10-01: 135
+  2023-10-01: 129
 IL:
   2010-01-01: 0
   2021-10-01: 59
+  2023-10-01: 62
+  2024-10-01: 76
 IN:
   2010-01-01: 0
   2021-10-01: 57
+  2023-05-01: 60
 KS:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 KY:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 LA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 MA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 MD:
   2010-01-01: 0
   2021-10-01: 0
+  2024-01-01: 0
+  2023-01-01: 0
 ME:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 MI:
   2010-01-01: 0
   2021-10-01: 100
+  2023-10-01: 109
+  2024-10-01: 115
 MN:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 MO:
   2010-01-01: 0
   2021-10-01: 134
+  2023-10-01: 153
+  2024-10-01: 158
 MS:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 MT:
   2010-01-01: 0
   2021-10-01: 180
+  2023-10-01: 105
+  2024-10-01: 113
 NC:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 ND:
   2010-01-01: 0
   2021-10-01: 208
+  2023-10-01: 118
+  2024-10-01: 123
 NE:
   2010-01-01: 0
   2021-10-01: 54
+  2023-10-01: 60
+  2024-10-01: 62
 NH:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 NJ:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 NM:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 NV:
   2010-01-01: 0
   2021-10-01: 56
+  2023-10-01: 81
+  2024-10-01: 75
 NY:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 OH:
   2010-01-01: 0
   2021-10-01: 84
+  2023-10-01: 102
+  2024-10-01: 105
 OK:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 OR:
   2010-01-01: 0
   2021-10-01: 57
+  2023-10-01: 59
+  2024-10-01: 63
 PA:
   2010-01-01: 0
   2021-10-01: 60
+  2023-10-01: 70
+  2024-10-01: 72
 RI:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 SC:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 SD:
   2010-01-01: 0
   2021-10-01: 91
+  2023-10-01: 103
+  2024-10-01: 106
 TN:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 TX:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 UT:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 VA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 VI:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 VT:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 WA:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0
 WI:
   2010-01-01: 0
   2021-10-01: 93
+  2023-10-01: 99
+  2024-10-01: 103
 WV:
   2010-01-01: 0
   2021-10-01: 77
+  2023-10-01: 79
+  2024-10-01: 86
 WY:
   2010-01-01: 0
   2021-10-01: 0
+  2023-10-01: 0

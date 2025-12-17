@@ -16,7 +16,10 @@ class ia_cdcc(Variable):
     defined_for = StateCode.IA
 
     def formula(tax_unit, period, parameters):
-        federal_cdcc = tax_unit("cdcc", period)
-        netinc = add(tax_unit, period, ["ia_net_income"])
+        # Iowa matches the potential federal credit
+        federal_cdcc = tax_unit("cdcc_potential", period)
+        taxable_income = tax_unit("ia_taxable_income", period)
         p = parameters(period).gov.states.ia.tax.income
-        return federal_cdcc * p.credits.child_care.fraction.calc(netinc)
+        return federal_cdcc * p.credits.child_care.fraction.calc(
+            taxable_income
+        )

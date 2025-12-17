@@ -1,0 +1,26 @@
+- name: Case 1, meet all requirements.
+  period: 2023
+  input:
+    is_ssi_eligible: true
+    il_aabd_immigration_status_eligible_person: true
+    state_code: IL
+  output:
+    il_aabd_non_financial_eligible_person: true
+
+- name: Case 2, not SSI eligible.
+  period: 2023
+  input:
+    is_ssi_eligible: false
+    il_aabd_immigration_status_eligible_person: true
+    state_code: IL
+  output:
+    il_aabd_non_financial_eligible_person: false
+
+- name: Case 3, immigration ineligible.
+  period: 2023
+  input:
+    is_ssi_eligible: true
+    il_aabd_immigration_status_eligible_person: false
+    state_code: IL
+  output:
+    il_aabd_non_financial_eligible_person: false

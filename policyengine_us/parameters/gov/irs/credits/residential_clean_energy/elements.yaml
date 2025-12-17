@@ -17,8 +17,7 @@ values:
     - fuel_cell_property_expenditures
     - qualified_battery_storage_technology_expenditures
 metadata:
-  unit: program
-  name: residential_clean_energy_credit_elements
+  unit: list
   label: Expenditure elements of the Residential Clean Energy Credit
   reference:
     - title: 26 U.S. Code § 25D - Residential energy efficient property (a)

@@ -11,7 +11,7 @@ HEAD_OF_HOUSEHOLD:
   0000-01-01: 0
   2020-01-01: 112_500
   2021-01-01: 0
-WIDOW:
+SURVIVING_SPOUSE:
   0000-01-01: 0
   2020-01-01: 75_000
   2021-01-01: 0
@@ -24,7 +24,6 @@ metadata:
   period: year
   breakdown:
     - filing_status
-  name: rrc_second_phase_out_threshold
   label: Second Recovery Rebate Credit phase-out starting threshold
   reference:
     - title: 26 U.S. Code § 6428A(c)

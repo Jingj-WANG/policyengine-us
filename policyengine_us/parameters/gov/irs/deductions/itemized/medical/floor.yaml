@@ -1,8 +1,11 @@
 description: Medical expenses over this percentage of AGI are deductible from taxable income.
 metadata:
   unit: /1
-  name: irs_medical_expense_deduction_floor
+  period: year
   label: Medical expense deduction floor
+  reference:
+    - title: 26 U.S. Code § 213 - Medical, dental, etc., expenses (a)
+      href: https://www.law.cornell.edu/uscode/text/26/213
 values:
   2013-01-01: 0.1
   2017-01-01: 0.075

@@ -5,7 +5,6 @@ import pandas as pd
 import subprocess
 import stat
 from io import StringIO
-from policyengine_us.data.datasets.cps.cps import CPS
 from policyengine_core.data import Dataset
 from policyengine_core.taxbenefitsystems import TaxBenefitSystem
 from policyengine_us import Microsimulation
@@ -104,7 +103,6 @@ class TaxSim35:
     NEUTRALIZED_VARIABLES = [
         "snap",
         "ssi",
-        "state_supplement",
         "tanf",
         "wic",
     ]
@@ -132,9 +130,11 @@ class TaxSim35:
         else:
             input_csv = pd.DataFrame(
                 {
-                    col: [value]
-                    if not isinstance(value, collections.Sequence)
-                    else value
+                    col: (
+                        [value]
+                        if not isinstance(value, collections.Sequence)
+                        else value
+                    )
                     for col, value in input_data.items()
                 }
             )
@@ -283,6 +283,9 @@ class TaxSim35:
         return test_str
 
 
+DEFAULT_DATASET = "hf://policyengine/policyengine-us-data/enhanced_cps_2024.h5"
+
+
 if __name__ == "__main__":
     parser = ArgumentParser(description="Generate tests from TAXSIM35")
     parser.add_argument(
@@ -298,6 +301,6 @@ if __name__ == "__main__":
     taxsim = TaxSim35()
     taxsim.OUTPUT_VARIABLES = args.outputs
     result = taxsim.generate_from_microsimulation(
-        CPS, args.year, number=args.num
+        DEFAULT_DATASET, args.year, number=args.num
     )
     print(result)

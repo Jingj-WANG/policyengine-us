@@ -5,6 +5,10 @@ metadata:
   amount_unit: currency-USD
   label: EITC phase-out start by number of children
   reference:
+    - title: 2025 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-24-40.pdf#page=9
+    - title: 2024 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-23-34.pdf#page=10
     - title: 2023 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-22-38.pdf#page=10
     - title: 2022 IRS data release
@@ -19,6 +23,13 @@ metadata:
       href: https://www.irs.gov/pub/irs-drop/rp-17-58.pdf#page=10
     - title: 2017 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-16-55.pdf#page=11
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Feb 2024
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2024-02/53724-2024-02-Tax-Parameters.xlsx
+    - title: CBO Tax Parameters and Effective Marginal Tax Rates | Jan 2025
+      # 1. Tax Parameters.
+      href: https://www.cbo.gov/system/files/2025-01/53724-2025-01-Tax-Parameters.xlsx
+
 
 # Described in IRS data release as "Threshold Phaseout Amount".
 brackets:
@@ -41,6 +52,19 @@ brackets:
                 href: https://www.law.cornell.edu/uscode/text/26/32#n_4_A_ii
         2022-01-01: 9_160
         2023-01-01: 9_800
+        2024-01-01: 10_330
+        2025-01-01: 10_620
+        # CBO forecast.
+        2026-01-01: 10_840
+        2027-01-01: 11_070
+        2028-01-01: 11_290
+        2029-01-01: 11_520
+        2030-01-01: 11_740
+        2031-01-01: 11_980
+        2032-01-01: 12_210
+        2033-01-01: 12_460
+        2034-01-01: 12_700
+        2035-01-01: 12_960
       metadata:
         unit: currency-USD
   - threshold:
@@ -57,6 +81,19 @@ brackets:
         2021-01-01: 19_520
         2022-01-01: 20_130
         2023-01-01: 21_560
+        2024-01-01: 22_720
+        2025-01-01: 23_350
+        # CBO forecast.
+        2026-01-01: 23_840
+        2027-01-01: 24_340
+        2028-01-01: 24_830
+        2029-01-01: 25_320
+        2030-01-01: 25_820
+        2031-01-01: 26_340
+        2032-01-01: 26_860
+        2033-01-01: 27_390
+        2034-01-01: 27_930
+        2035-01-01: 28_490
       metadata:
         unit: currency-USD
   - threshold:
@@ -73,6 +110,19 @@ brackets:
         2021-01-01: 19_520
         2022-01-01: 20_130
         2023-01-01: 21_560
+        2024-01-01: 22_720
+        2025-01-01: 23_350
+        # CBO forecast.
+        2026-01-01: 23_840
+        2027-01-01: 24_340
+        2028-01-01: 24_830
+        2029-01-01: 25_320
+        2030-01-01: 25_820
+        2031-01-01: 26_340
+        2032-01-01: 26_860
+        2033-01-01: 27_390
+        2034-01-01: 27_930
+        2035-01-01: 28_490 
       metadata:
         unit: currency-USD
   - threshold:
@@ -89,5 +139,17 @@ brackets:
         2021-01-01: 19_520
         2022-01-01: 20_130
         2023-01-01: 21_560
+        2024-01-01: 22_720
+        2025-01-01: 23_350
+        # CBO forecast.
+        2026-01-01: 23_810
+        2027-01-01: 24_310
+        2028-01-01: 24_780
+        2029-01-01: 25_260
+        2030-01-01: 25_760
+        2031-01-01: 26_270
+        2032-01-01: 26_790
+        2033-01-01: 27_320
+        2034-01-01: 27_870
       metadata:
         unit: currency-USD

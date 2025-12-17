@@ -5,6 +5,5 @@ values:
   - spm_unit_energy_subsidy
   - spm_unit_wic
 metadata:
-  unit: variable
-  name: disabled_programs
+  unit: list
   label: Disabled programs

@@ -1,6 +1,8 @@
 description: Federal poverty guidelines published by the Department of Health and Human Services.
 first_person:
   CONTIGUOUS_US:
+    2015-01-01: 11_770
+    2016-01-01: 11_880
     2017-01-01: 12_060
     2018-01-01: 12_140
     2019-01-01: 12_490
@@ -8,7 +10,11 @@ first_person:
     2021-01-01: 12_880
     2022-01-01: 13_590 # 2022 values took effect on 2022-01-12, but we assign it to the start of the calendar year.
     2023-01-01: 14_580
+    2024-01-01: 15_060
+    2025-01-01: 15_650
   AK:
+    2015-01-01: 14_720
+    2016-01-01: 14_840
     2017-01-01: 15_060
     2018-01-01: 15_180
     2019-01-01: 15_600
@@ -16,7 +22,11 @@ first_person:
     2021-01-01: 16_090
     2022-01-01: 16_990
     2023-01-01: 18_210
+    2024-01-01: 18_810
+    2025-01-01: 19_550
   HI:
+    2015-01-01: 13_550
+    2016-01-01: 13_670
     2017-01-01: 13_860
     2018-01-01: 13_960
     2019-01-01: 14_380
@@ -24,10 +34,24 @@ first_person:
     2021-01-01: 14_820
     2022-01-01: 15_630
     2023-01-01: 16_770
+    2024-01-01: 17_310
+    2025-01-01: 17_990
+  # Add placeholders for Guam, Puerto Rico, and the Virgin Islands.
+  # Poverty guidelines do not apply to these areas, but we include them for
+  # completeness and to avoid errors arising from uprating and breakdown
+  # metadata fields.
+  GU:
+    2024-01-01: 0
+  PR:
+    2024-01-01: 0
+  VI:
+    2024-01-01: 0
 additional_person:
   # Calculated by subtracting a two-person household's line from a one-person's.
   # This difference is always the same for larger households.
   CONTIGUOUS_US:
+    2015-01-01: 4_160
+    2016-01-01: 4_160
     2017-01-01: 4_180
     2018-01-01: 4_320
     2019-01-01: 4_420
@@ -35,7 +59,11 @@ additional_person:
     2021-01-01: 4_540
     2022-01-01: 4_720
     2023-01-01: 5_140
+    2024-01-01: 5_380
+    2025-01-01: 5_500
   AK:
+    2015-01-01: 5_200
+    2016-01-01: 5_200
     2017-01-01: 5_230
     2018-01-01: 5_400
     2019-01-01: 5_530
@@ -43,7 +71,11 @@ additional_person:
     2021-01-01: 5_680
     2022-01-01: 5_900
     2023-01-01: 6_430
+    2024-01-01: 6_730
+    2025-01-01: 6_880
   HI:
+    2015-01-01: 4_780
+    2016-01-01: 4_780
     2017-01-01: 4_810
     2018-01-01: 4_810
     2019-01-01: 5_080
@@ -51,9 +83,23 @@ additional_person:
     2021-01-01: 5_220
     2022-01-01: 5_430
     2023-01-01: 5_910
+    2024-01-01: 6_190
+    2025-01-01: 6_330
+  # Add placeholders for Guam, Puerto Rico, and the Virgin Islands.
+  GU:
+    2024-01-01: 0
+  PR:
+    2024-01-01: 0
+  VI:
+    2024-01-01: 0
+
 metadata:
   unit: currency-USD
   reference:
+    - title: 2015 Poverty Guidelines
+      href: https://aspe.hhs.gov/2015-poverty-guidelines
+    - title: 2016 Poverty Guidelines
+      href: https://aspe.hhs.gov/2016-poverty-guidelines
     - title: Prior HHS Poverty Guidelines and Federal Register References
       href: https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines/prior-hhs-poverty-guidelines-federal-register-references
     - title: Poverty Guidelines
@@ -63,3 +109,4 @@ metadata:
   breakdown:
     - [first_person, additional_person]
     - state_group
+  uprating: gov.hhs.uprating

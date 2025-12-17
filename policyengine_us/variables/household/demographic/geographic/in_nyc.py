@@ -6,12 +6,15 @@ class in_nyc(Variable):
     entity = Household
     definition_period = YEAR
     label = "Is in NYC"
-    # Currently disabled to allow entry until we collect county.
-    # County of the below list.
-    # NYC_COUNTIES = [
-    #   "NEW_YORK_COUNTY_NY",
-    #   "KINGS_COUNTY_NY",
-    #   "QUEENS_COUNTY_NY",
-    #   "RICHMOND_COUNTY_NY",
-    #   "BRONX_COUNTY_NY",
-    # ]
+
+    def formula(household, period, parameters):
+        county = household("county_str", period)
+        possible_counties = [
+            "QUEENS_COUNTY_NY",
+            "BRONX_COUNTY_NY",
+            "RICHMOND_COUNTY_NY",
+            "NEW_YORK_COUNTY_NY",
+            "KINGS_COUNTY_NY",
+        ]
+
+        return np.isin(county, possible_counties)
